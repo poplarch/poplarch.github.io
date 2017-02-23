@@ -135,6 +135,120 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-《计算机是怎样跑起来的》读书笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/17/《计算机是怎样跑起来的》读书笔记/">《计算机是怎样跑起来的》读书笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/17/《计算机是怎样跑起来的》读书笔记/" class="archive-article-date">
+  	<time datetime="2017-02-17T02:24:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="计算机的三个根本性基础"><a href="#计算机的三个根本性基础" class="headerlink" title="计算机的三个根本性基础"></a>计算机的三个根本性基础</h1><ol>
+<li>计算机是执行输入、运算、输出的设备</li>
+<li>程序是指令和数据的集合</li>
+<li>计算机的处理方式有时与人们的思维习惯不同</li>
+</ol>
+<h1 id="计算机硬件三个基本要素"><a href="#计算机硬件三个基本要素" class="headerlink" title="计算机硬件三个基本要素"></a>计算机硬件三个基本要素</h1><ul>
+<li>CPU</li>
+<li>内存</li>
+<li>I/O</li>
+</ul>
+<h1 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h1><ul>
+<li>顺序执行</li>
+<li>条件分支</li>
+<li>循环</li>
+</ul>
+<h1 id="主要的典型算法"><a href="#主要的典型算法" class="headerlink" title="主要的典型算法"></a>主要的典型算法</h1><ul>
+<li><p>辗转相除法 求解最大公约数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> a=<span class="number">123456789</span>, b=<span class="number">987654321</span>;</div><div class="line">	</div><div class="line">	<span class="keyword">while</span> (a != b)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span> ( a&gt;b )</div><div class="line">			a=a-b;</div><div class="line">		<span class="keyword">else</span></div><div class="line">			b=b-a;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"max common divisor is [%d]\n"</span>, a);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>埃拉拖斯特尼筛法 判定素数</p>
+</li>
+<li><p>检索数据</p>
+<ul>
+<li>二分查找</li>
+<li>哈希查找</li>
+</ul>
+</li>
+<li><p>数据排序</p>
+<ul>
+<li><p>冒泡排序</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> i, j, tmp;</div><div class="line">	<span class="keyword">int</span> x[<span class="number">10</span>] = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">12</span>,<span class="number">11</span>,<span class="number">23</span>&#125;;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">9</span>; i&gt;<span class="number">0</span>; i--) &#123;</div><div class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;i; j++) &#123;</div><div class="line">			<span class="keyword">if</span>(x[i] &gt; x[j]) &#123;</div><div class="line">				tmp = x[i];</div><div class="line">				x[i] = x[j];</div><div class="line">				x[j] = tmp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"x[%d]=%d\n"</span>, i, x[i]);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>快速排序</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="主要的典型数据结构"><a href="#主要的典型数据结构" class="headerlink" title="主要的典型数据结构"></a>主要的典型数据结构</h1><ul>
+<li><p>栈</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">(<span class="keyword">char</span> Data)</span></span>;</div><div class="line"><span class="function"><span class="keyword">char</span> <span class="title">Pop</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"></div><div class="line"><span class="keyword">char</span> Stack[<span class="number">100</span>];</div><div class="line"><span class="keyword">int</span> StackPointer = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">	<span class="keyword">char</span> init[<span class="number">10</span>]=<span class="string">"fortest"</span>;</div><div class="line">	<span class="keyword">while</span>(init[i] != <span class="string">'\0'</span>) &#123;</div><div class="line">		Push(init[i]);</div><div class="line">		i++;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=StackPointer<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Stack[%d]=[%c]\n"</span>, i, Stack[i]);</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=StackPointer<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"[%d]: [%c]\n"</span>, i, Pop());</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">(<span class="keyword">char</span> Data)</span></span></div><div class="line">&#123;</div><div class="line">	Stack[StackPointer] = Data;</div><div class="line">	StackPointer++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">char</span> <span class="title">Pop</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	StackPointer--;</div><div class="line">	<span class="keyword">return</span> Stack[StackPointer];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>队列</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Set</span><span class="params">(<span class="keyword">char</span> Data)</span></span>;</div><div class="line"><span class="function"><span class="keyword">char</span> <span class="title">Get</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"></div><div class="line"><span class="keyword">char</span> Queue[<span class="number">100</span>];</div><div class="line"><span class="keyword">int</span> SetIndex=<span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> GetIndex=<span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">	<span class="keyword">char</span> init[<span class="number">10</span>]=<span class="string">"fortest"</span>;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(init[i] != <span class="string">'\0'</span>)</div><div class="line">	&#123;</div><div class="line">		Set(init[i]);</div><div class="line">		i++;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=SetIndex<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Queue[%d]=%c\n"</span>, i, Queue[i]);</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=GetIndex; i&lt;SetIndex; i++)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"GetQueue=[%c]\n"</span>, Get());</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Set</span><span class="params">(<span class="keyword">char</span> Data)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(SetIndex &gt; <span class="number">99</span>)</div><div class="line">		SetIndex = <span class="number">0</span>;</div><div class="line"></div><div class="line">	Queue[SetIndex] = Data;</div><div class="line">	SetIndex++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">char</span> <span class="title">Get</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">char</span> Data;</div><div class="line"></div><div class="line">	Data = Queue[GetIndex];</div><div class="line">	GetIndex++;</div><div class="line">	<span class="keyword">if</span>(GetIndex &gt; <span class="number">99</span>)</div><div class="line">		GetIndex=<span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> Data;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>链表</p>
+</li>
+<li>二叉树</li>
+</ul>
+<h1 id="面向对象编程语言"><a href="#面向对象编程语言" class="headerlink" title="面向对象编程语言"></a>面向对象编程语言</h1><h2 id="三个基本特性"><a href="#三个基本特性" class="headerlink" title="三个基本特性"></a>三个基本特性</h2><ul>
+<li>继承</li>
+<li>封装</li>
+<li>多态</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/17/《计算机是怎样跑起来的》读书笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-《Github》从入门到实践》读书笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -306,6 +420,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
